@@ -9,7 +9,7 @@ dependencies:
     specifier: ^1.0.5
     version: 1.0.6(@prisma/client@4.13.0)(next-auth@4.22.1)
   '@prisma/client':
-    specifier: ^4.8.1
+    specifier: ^4.13.0
     version: 4.13.0(prisma@4.13.0)
   '@radix-ui/react-popover':
     specifier: ^1.0.2
