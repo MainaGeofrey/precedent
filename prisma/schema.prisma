@@ -8,7 +8,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url = "postgres://postgres:rBkH8cp5nzmX8rg@db.dcqhbhssgabornlwxufm.supabase.co:6543/postgres" // uses connection pooling
+  url = "" // uses connection pooling
  // directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
   //shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
 }
