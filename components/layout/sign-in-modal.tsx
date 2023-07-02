@@ -50,17 +50,30 @@ const SignInModal = ({
   }
 
   const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    console.log("sig in")
-    const result = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
+    e.preventDefault();
+    console.log("sign in");
+    
+    try {
+      const result = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+  
 
-    console.log(result)
-    router.push('/')
-    router.refresh()
-  }
+      if (result.data.session !== null) {
+        //console.log(result);
+        router.push('/admin/');
+        setShowSignInModal(false)
+      } else {
+        console.error(result.error);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+    
+    //router.refresh();
+  };
+  
 
   return (
     <Modal showModal={showSignInModal} setShowModal={setShowSignInModal}>
